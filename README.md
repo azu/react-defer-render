@@ -50,6 +50,73 @@ export default class App extends React.Component {
 
 See [public/](public)
 
+## Perf
+
+### Before
+
+Finish first render: 1517.4099999999999ms
+
+```jsx
+// LICENSE : MIT
+"use strict";
+const React = require("react");
+import ComplexComponent from './ComplexComponent/ComplexComponent';
+export default class App extends React.Component {
+    render() {
+        return <div className="App">
+            <ComplexComponent count={3000}/>
+            <ComplexComponent count={3000}/>
+            <ComplexComponent count={3000}/>
+            <ComplexComponent count={3000}/>
+            <ComplexComponent count={3000}/>
+            <ComplexComponent count={3000}/>
+        </div>;
+    }
+}
+```
+
+### After
+
+Finish first render: 935.575ms
+
+Reduce 50%(ComplexComponent * 3)
+
+```jsx
+// LICENSE : MIT
+"use strict";
+const React = require("react");
+const ReactDeferRender = require("react-defer-render");
+import ComplexComponent from './ComplexComponent/ComplexComponent';
+export default class App extends React.Component {
+    render() {
+        // Recommened: placeholder elemenet should have height and width for recovering scroll position
+        const style = {
+            height: 300
+        };
+        return <div className="App">
+            <ComplexComponent count={3000}/>
+            <ComplexComponent count={3000}/>
+            <ComplexComponent count={3000}/>
+            <ReactDeferRender node={<ComplexComponent count={3000}/>}>
+                <div className="PlaceHolder" style={style}>
+
+                </div>
+            </ReactDeferRender>
+            <ReactDeferRender node={<ComplexComponent count={3000}/>}>
+                <div className="PlaceHolder" style={style}>
+
+                </div>
+            </ReactDeferRender>
+            <ReactDeferRender node={<ComplexComponent count={3000}/>}>
+                <div className="PlaceHolder" style={style}>
+
+                </div>
+            </ReactDeferRender>
+        </div>;
+    }
+}
+```
+
 ## Changelog
 
 See [Releases page](https://github.com/azu/react-defer-render/releases).
