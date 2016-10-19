@@ -63,9 +63,11 @@
     "rimraf": "^2.5.4",
     "timing.js": "^1.1.0",
     "webpack": "^2.1.0-beta.25",
-    "webpack-dev-server": "^2.1.0-beta.9"
+    "webpack-dev-server": "^2.1.0-beta.9",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2"
   },
-  "dependencies": {
+  "peerDependencies": {
     "react": "^15.3.2",
     "react-dom": "^15.3.2"
   }
