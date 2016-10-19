@@ -1,0 +1,9 @@
+.ComplexComponent {
+    white-space: nowrap;
+    height: 300px;
+    border: 1px solid #ddd;
+}
+
+.ComplexComponent > * {
+    display: inline-block;
+}
