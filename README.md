@@ -20,6 +20,7 @@ const ReactDeferRender = require("react-defer-render");
 import ComplexComponent from './ComplexComponent/ComplexComponent';
 export default class App extends React.Component {
     render() {
+        // Recommened: placeholder elemenet should have height and width for recovering scroll position
         const style = {
             height: 300
         };
