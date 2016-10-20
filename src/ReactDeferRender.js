@@ -21,11 +21,14 @@ class ReactDeferRender extends React.Component {
         if (this.state.isResolved) {
             return this.props.node;
         }
-        return this.props.children;
+        if(this.props.children) {
+            return this.props.children;
+        }
+        return null;
     }
 }
 ReactDeferRender.propTypes = {
-    children: React.PropTypes.node.isRequired,
+    children: React.PropTypes.node,
     node: React.PropTypes.node.isRequired,
     delay: React.PropTypes.number
 };
