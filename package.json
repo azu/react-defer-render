@@ -60,13 +60,13 @@
     "postcss-easy-import": "^1.0.1",
     "postcss-reporter": "^1.4.1",
     "power-assert": "^1.4.1",
+    "react": "^15.3.2",
     "react-addons-perf": "^15.3.2",
+    "react-dom": "^15.3.2",
     "rimraf": "^2.5.4",
     "timing.js": "^1.1.0",
     "webpack": "^2.1.0-beta.25",
-    "webpack-dev-server": "^2.1.0-beta.9",
-    "react": "^15.3.2",
-    "react-dom": "^15.3.2"
+    "webpack-dev-server": "^2.1.0-beta.9"
   },
   "peerDependencies": {
     "react": "^15.3.2",
