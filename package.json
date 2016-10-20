@@ -9,7 +9,7 @@
     "src/"
   ],
   "name": "react-defer-render",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "ReactDeferRender ",
   "main": "lib/ReactDeferRender.js",
   "scripts": {
