@@ -18,6 +18,7 @@
     "prepublish": "npm run --if-present build",
     "start": "npm-run-all clean --parallel watch:css server",
     "server": "NODE_ENV=development webpack-dev-server -d --hot --content-base ./public --open",
+    "build:main": "NODE_ENV=production babel src --out-dir lib --source-maps",
     "build:js": "NODE_ENV=production webpack -p",
     "build:css": "postcss --config postcss.config.js",
     "build": "npm-run-all clean --parallel build:*",
